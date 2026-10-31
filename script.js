@@ -1,6 +1,9 @@
 // ---------- Settings ----------
-const API_URL = "https://mental-health-score-predictor-1-l44f.onrender.com";
-const SCORE_MAX = 100;       // scale used only to draw the circular ring (example response was 65.42)
+const IS_LOCAL = location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.port === "5500";
+const API_URL = IS_LOCAL
+  ? "http://127.0.0.1:8000/predict"
+  : "https://mental-health-score-predictor-1-l44f.onrender.com/predict";
+const SCORE_MAX = 10;        // scale used only to draw the circular ring and the "out of" label
 const TIMEOUT_MS = 20000;
 
 // Same names and rules as the FastAPI StudentData model
