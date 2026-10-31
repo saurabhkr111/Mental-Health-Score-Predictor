@@ -1,5 +1,5 @@
 // ---------- Settings ----------
-const API_URL = " https://mental-health-score-predictor-1-l44f.onrender.com";
+const API_URL = "https://mental-health-score-predictor-1-l44f.onrender.com";
 const SCORE_MAX = 100;       // scale used only to draw the circular ring (example response was 65.42)
 const TIMEOUT_MS = 20000;
 
@@ -131,7 +131,7 @@ form.addEventListener("submit", async (e) => {
   } catch (err) {
     showAlert(err.name === "AbortError"
       ? "The server took too long to respond. Please try again."
-      : "Could not reach the prediction service. Check that the API is running at http://127.0.0.1:8000.");
+      : "Could not reach the prediction service. Please check your internet connection and try again.");
   } finally {
     clearTimeout(timer); setLoading(false);
   }
