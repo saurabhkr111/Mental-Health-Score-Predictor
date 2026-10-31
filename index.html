@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mental Health Score Predictor</title>
+  <meta name="description" content="Explore how your digital habits, sleep and daily routine relate to a model-predicted mental health score.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Icon sprite (minimal line icons) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L18 10l-4-4L4 16v4zM13 7l4 4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 15l4-4 3 3 5-6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 100 6 3 3 0 000-6z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#predict">Skip to the form</a>
+
+  <header class="nav" id="home">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#home" aria-label="Mental Health Predictor home">
+        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="#5271FF" stroke-width="2"/><path d="M7 16c3-7 5-7 8 0s5 7 8 0" fill="none" stroke="#55B8A5" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>Mental Health Predictor</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav id="menu" class="menu" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#how">How It Works</a>
+        <a href="#about">About</a>
+        <a class="btn btn-primary btn-sm" href="#predict">Check Your Score</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <span class="badge">AI-POWERED WELLNESS INSIGHTS</span>
+        <h1>Understand Your Digital Well-being.</h1>
+        <p class="lead">Explore how your digital habits, sleep, study routine, and daily lifestyle relate to your predicted mental health score.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#predict">Predict My Score</a>
+          <a class="btn btn-ghost" href="#how">How It Works</a>
+        </div>
+        <p class="note">Designed to encourage awareness of digital habits and personal well-being.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 460 380" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5271FF"/><stop offset="1" stop-color="#55B8A5"/></linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9E7FF"/><stop offset="1" stop-color="#DCE6FF"/></linearGradient>
+            <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#172554" flood-opacity=".14"/></filter>
+          </defs>
+          <circle cx="360" cy="90" r="80" fill="url(#g2)"/>
+          <circle cx="90" cy="310" r="60" fill="#E9E7FF" opacity=".8"/>
+          <g class="float" filter="url(#sh)">
+            <rect x="50" y="60" width="290" height="230" rx="26" fill="#fff"/>
+            <circle cx="140" cy="165" r="50" fill="none" stroke="#E9E7FF" stroke-width="12"/>
+            <circle cx="140" cy="165" r="50" fill="none" stroke="url(#g1)" stroke-width="12" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="110" transform="rotate(-90 140 165)"/>
+            <text x="140" y="174" text-anchor="middle" font-size="26" font-weight="800" fill="#172554">Score</text>
+            <rect x="215" y="105" width="95" height="10" rx="5" fill="#E2E8F0"/>
+            <rect x="215" y="125" width="65" height="10" rx="5" fill="#E2E8F0"/>
+            <polyline points="80,255 130,235 170,246 220,215 270,224 310,198" fill="none" stroke="#55B8A5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g class="float float-b" filter="url(#sh)">
+            <rect x="270" y="225" width="150" height="76" rx="20" fill="#fff"/>
+            <path d="M306 250a14 14 0 1015 15 11 11 0 01-15-15z" fill="none" stroke="#5271FF" stroke-width="2.5" stroke-linejoin="round"/>
+            <text x="340" y="259" font-size="14" font-weight="700" fill="#172554">Sleep</text>
+            <text x="340" y="278" font-size="13" fill="#64748B">Rest matters</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Prediction form -->
+    <section class="section wrap" id="predict" aria-labelledby="formTitle">
+      <div class="form-card">
+        <h2 id="formTitle">Let's Understand Your Daily Habits</h2>
+        <p class="sub">Share a few details to generate your personalized model prediction.</p>
+
+        <form id="predictForm" novalidate>
+          <fieldset>
+            <legend>Personal information</legend>
+            <div class="grid">
+              <div class="field"><label for="Age">Age</label>
+                <input id="Age" name="Age" type="number" min="10" max="100" step="1" inputmode="numeric" placeholder="e.g. 21" required></div>
+              <div class="field"><label for="Gender">Gender</label>
+                <select id="Gender" name="Gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+              <div class="field"><label for="Country">Country</label>
+                <input id="Country" name="Country" type="text" autocomplete="country-name" placeholder="e.g. India" required></div>
+              <div class="field"><label for="Academic_Level">Academic level</label>
+                <select id="Academic_Level" name="Academic_Level" required><option value="">Select level</option><option>Undergraduate</option><option>Graduate</option><option>High School</option></select></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Digital habits</legend>
+            <div class="grid">
+              <div class="field"><label for="Most_Used_Platform">Most-used platform</label>
+                <select id="Most_Used_Platform" name="Most_Used_Platform" required><option value="">Select platform</option><option>Facebook</option><option>LinkedIn</option><option>Instagram</option><option>Snapchat</option><option>Twitter</option><option>YouTube</option><option>TikTok</option><option>LINE</option><option>KakaoTalk</option><option>VKontakte</option><option>WhatsApp</option><option>WeChat</option></select></div>
+              <div class="field"><label for="Purpose_Of_Use">Purpose of use</label>
+                <select id="Purpose_Of_Use" name="Purpose_Of_Use" required><option value="">Select purpose</option><option>Networking</option><option>Education</option><option>Entertainment</option><option>News</option></select></div>
+              <div class="field"><label for="Avg_Daily_Usage_Hours">Average daily usage (hours)</label>
+                <input id="Avg_Daily_Usage_Hours" name="Avg_Daily_Usage_Hours" type="number" min="0" max="24" step="any" inputmode="decimal" placeholder="e.g. 4.5" required></div>
+              <div class="field"><label for="Daily_Unlocks">Daily unlocks</label>
+                <input id="Daily_Unlocks" name="Daily_Unlocks" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g. 60" required></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Lifestyle and well-being</legend>
+            <div class="grid">
+              <div class="field"><label for="Study_Hours">Study hours</label>
+                <input id="Study_Hours" name="Study_Hours" type="number" min="0" max="24" step="any" inputmode="decimal" placeholder="e.g. 4" required></div>
+              <div class="field"><label for="Physical_Activity_Hours">Physical activity hours</label>
+                <input id="Physical_Activity_Hours" name="Physical_Activity_Hours" type="number" min="0" max="24" step="any" inputmode="decimal" placeholder="e.g. 1" required></div>
+              <div class="field"><label for="Sleep_Hours_Per_Night">Sleep hours per night</label>
+                <input id="Sleep_Hours_Per_Night" name="Sleep_Hours_Per_Night" type="number" min="0" max="24" step="any" inputmode="decimal" placeholder="e.g. 7" required></div>
+              <div class="field"><label for="Stress_Level">Stress level</label>
+                <select id="Stress_Level" name="Stress_Level" required><option value="">Select stress level</option><option>Low</option><option>Medium</option><option>High</option><option>Very High</option></select></div>
+            </div>
+          </fieldset>
+
+          <p id="formAlert" class="alert" role="alert" hidden></p>
+          <button type="submit" id="submitBtn" class="btn btn-primary btn-block"><span class="spinner" aria-hidden="true"></span><span id="btnText">Predict My Score</span></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Results (shown only after a successful API response) -->
+    <section class="section wrap" id="results" aria-labelledby="resultTitle" hidden>
+      <div class="result-card">
+        <h2 id="resultTitle" tabindex="-1">Your Prediction Results</h2>
+        <div class="ring" role="img" aria-label="Predicted score" id="ring">
+          <svg viewBox="0 0 160 160" aria-hidden="true">
+            <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5271FF"/><stop offset="1" stop-color="#55B8A5"/></linearGradient></defs>
+            <circle class="ring-track" cx="80" cy="80" r="66"/>
+            <circle class="ring-bar" id="ringBar" cx="80" cy="80" r="66"/>
+          </svg>
+          <div class="ring-text"><strong id="scoreValue">–</strong><span id="scoreScale"></span></div>
+        </div>
+        <p class="result-text">This is the score estimated by the model from the habits you entered. Use it as a prompt to reflect on your routines, such as sleep, screen time and activity.</p>
+        <p class="disclaimer">This result is a model-generated estimate, not a medical diagnosis. It may be inaccurate and should not replace professional advice.</p>
+        <div class="hero-actions center">
+          <button type="button" class="btn btn-primary" id="againBtn">Assess Again</button>
+          <button type="button" class="btn btn-ghost" id="homeBtn">Back to Home</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section wrap" id="how" aria-labelledby="howTitle">
+      <h2 id="howTitle" class="center">How It Works</h2>
+      <div class="cards">
+        <article class="card"><svg class="ico"><use href="#i-edit"/></svg><h3>Share Your Habits</h3><p>Provide information about your daily routine, sleep, study, and digital activity.</p></article>
+        <article class="card"><svg class="ico"><use href="#i-spark"/></svg><h3>AI-Powered Prediction</h3><p>Your responses are processed by a machine learning model.</p></article>
+        <article class="card"><svg class="ico"><use href="#i-chart"/></svg><h3>Explore Your Result</h3><p>Review the model's estimate and reflect on your lifestyle patterns.</p></article>
+      </div>
+    </section>
+
+    <!-- Benefits / About -->
+    <section class="section wrap" id="about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle" class="center">Why Use It</h2>
+      <div class="cards">
+        <article class="card"><svg class="ico"><use href="#i-eye"/></svg><h3>Understand Digital Habits</h3><p>See how your screen time and app use fit into your day.</p></article>
+        <article class="card"><svg class="ico"><use href="#i-clock"/></svg><h3>Reflect on Daily Routines</h3><p>Look at sleep, study and activity together instead of in isolation.</p></article>
+        <article class="card"><svg class="ico"><use href="#i-heart"/></svg><h3>Encourage Healthier Habits</h3><p>Use the estimate as a starting point for small, realistic changes.</p></article>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section wrap" id="privacy" aria-labelledby="privTitle">
+      <div class="privacy">
+        <h2 id="privTitle">Privacy Notice</h2>
+        <p>Please avoid entering names, contact details or other personally identifiable information. This form only needs the twelve habit and background fields shown above.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot-inner">
+      <div>
+        <strong>Mental Health Predictor</strong>
+        <p>A student project that estimates a mental health score from lifestyle and social media habits.</p>
+      </div>
+      <nav aria-label="Footer"><a href="#home">Home</a><a href="#how">How It Works</a><a href="#privacy">Privacy Notice</a><a href="#disclaimer">Disclaimer</a></nav>
+    </div>
+    <p class="wrap foot-note" id="disclaimer">This application is intended for educational and informational purposes only.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
