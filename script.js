@@ -1,5 +1,5 @@
 // ---------- Settings ----------
-const API_URL = "http://127.0.0.1:8000/predict";
+const API_URL = " https://mental-health-score-predictor-1-l44f.onrender.com";
 const SCORE_MAX = 100;       // scale used only to draw the circular ring (example response was 65.42)
 const TIMEOUT_MS = 20000;
 
