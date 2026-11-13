@@ -1,5 +1,5 @@
 ﻿# Mental-Health-Score-Predictor
-# Mental Health Score Predictor
+
 
 An end-to-end Machine Learning application that estimates mental health scores based on digital habits, lifestyle, academic activities, and behavioral factors.
 
