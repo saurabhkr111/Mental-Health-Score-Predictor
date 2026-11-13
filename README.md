@@ -11,23 +11,6 @@ An end-to-end Machine Learning application that estimates mental health scores b
 
 This project uses Machine Learning to analyze user-provided information and generate estimated mental health scores. It demonstrates the practical application of data science, model development, and API integration.
 
-## Screenshots
-
-### Home Page
-
-
-
-### Prediction Form
-
-
-
-### Prediction Results
-
-
-
-### How It Works
-
-
 
 ## Key Features
 
